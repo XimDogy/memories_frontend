@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { deepPurple } from '@material-ui/core/colors';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -40,4 +41,53 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+
+
+    [theme.breakpoints.down('sm')]: {
+      appBar: {
+        borderRadius: 15,
+        margin: '30px 0',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 50px',
+      },
+
+      toolbar: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        width: '300px',
+      },
+      heading: {
+        fontSize: 40,
+        color: 'rgba(0,183,255, 1)',
+        textDecoration: 'none',
+      },
+
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      heading: {
+        fontSize: 30,
+        color: 'rgba(0,183,255, 1)',
+        textDecoration: 'none',
+      },
+      toolbar: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        width: '230px',
+      },
+      userName: {
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: 15
+      },
+      logout: {
+        width: '20px',
+        fontSize: 12
+      }
+      
+    }
 }));
+
